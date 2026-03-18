@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "calsnap",
+    "name": "CalSnap",
     "slug": "calsnap",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,19 +9,31 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1A237E"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bigclawai.calsnap",
+      "infoPlist": {
+        "NSCameraUsageDescription": "CalSnap needs camera access to scan event flyers and posters.",
+        "NSPhotoLibraryUsageDescription": "CalSnap needs photo library access to select event images.",
+        "NSCalendarsUsageDescription": "CalSnap needs calendar access to add extracted events."
+      }
     },
     "android": {
+      "package": "com.bigclawai.calsnap",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#1A237E",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "READ_CALENDAR",
+        "WRITE_CALENDAR"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
